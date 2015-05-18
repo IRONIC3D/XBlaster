@@ -16,6 +16,7 @@
 		E606B05A1B09A5DA0001BB11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E606B0591B09A5DA0001BB11 /* Images.xcassets */; };
 		E606B05D1B09A5DA0001BB11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E606B05B1B09A5DA0001BB11 /* LaunchScreen.xib */; };
 		E606B0691B09A5DA0001BB11 /* XBlasterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E606B0681B09A5DA0001BB11 /* XBlasterTests.m */; };
+		E606B0751B09A68E0001BB11 /* thirteen_pixel_fonts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E606B0741B09A68E0001BB11 /* thirteen_pixel_fonts.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		E606B0621B09A5DA0001BB11 /* XBlasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XBlasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E606B0671B09A5DA0001BB11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E606B0681B09A5DA0001BB11 /* XBlasterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBlasterTests.m; sourceTree = "<group>"; };
+		E606B0741B09A68E0001BB11 /* thirteen_pixel_fonts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = thirteen_pixel_fonts.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		E606B0461B09A5DA0001BB11 /* XBlaster */ = {
 			isa = PBXGroup;
 			children = (
+				E606B0721B09A6670001BB11 /* Resources */,
 				E606B04B1B09A5DA0001BB11 /* AppDelegate.h */,
 				E606B04C1B09A5DA0001BB11 /* AppDelegate.m */,
 				E606B04E1B09A5DA0001BB11 /* GameScene.h */,
@@ -125,6 +128,22 @@
 				E606B0671B09A5DA0001BB11 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E606B0721B09A6670001BB11 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E606B0731B09A6730001BB11 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E606B0731B09A6730001BB11 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E606B0741B09A68E0001BB11 /* thirteen_pixel_fonts.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E606B0751B09A68E0001BB11 /* thirteen_pixel_fonts.ttf in Resources */,
 				E606B05D1B09A5DA0001BB11 /* LaunchScreen.xib in Resources */,
 				E606B05A1B09A5DA0001BB11 /* Images.xcassets in Resources */,
 				E606B0521B09A5DA0001BB11 /* GameScene.sks in Resources */,
