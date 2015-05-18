@@ -12,6 +12,8 @@
     SKNode *_playerLayerNode;
     SKNode *_hudLayerNode;
     SKAction *_scoreFlashAction;
+    SKLabelNode *_playerHealthLabel;
+    NSString *_healthBar;
 }
 
 -(instancetype)initWithSize:(CGSize)size {
@@ -67,6 +69,31 @@
     
     _scoreFlashAction = [SKAction sequence:@[[SKAction scaleTo:1.1 duration:0.1], [SKAction scaleTo:1.0 duration:0.1]]];
     [scoreLabel runAction:[SKAction repeatAction:_scoreFlashAction count:10]];
+    
+    _healthBar = @"===================================================";
+    float testHealth = 75;
+    NSString *actualHealth = [_healthBar substringToIndex:(testHealth / 100 * _healthBar.length)];
+    
+    SKLabelNode *playerHealthBackground = [SKLabelNode labelNodeWithFontNamed:@"Thirteen Pixel Fonts"];
+    playerHealthBackground.name = @"playerHealthBackground";
+    playerHealthBackground.fontColor = [SKColor darkGrayColor];
+    playerHealthBackground.fontSize = 10.0f;
+    playerHealthBackground.text = _healthBar;
+    
+    playerHealthBackground.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    playerHealthBackground.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
+    playerHealthBackground.position = CGPointMake(0, self.size.height - barHeight + playerHealthBackground.frame.size.height);
+    [_hudLayerNode addChild:playerHealthBackground];
+    
+    _playerHealthLabel = [SKLabelNode labelNodeWithFontNamed:@"Thirteen Pixel Fonts"];
+    _playerHealthLabel.name = @"playerHealth";
+    _playerHealthLabel.fontColor = [SKColor whiteColor];
+    _playerHealthLabel.fontSize = 10.0f;
+    _playerHealthLabel.text = actualHealth;
+    _playerHealthLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    _playerHealthLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
+    _playerHealthLabel.position = CGPointMake(0, self.size.height - barHeight + _playerHealthLabel.frame.size.height);
+    [_hudLayerNode addChild:_playerHealthLabel];
 }
 
 @end
