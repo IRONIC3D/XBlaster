@@ -8,16 +8,16 @@
 
 #import "GameScene.h"
 
-@implementation GameScene
+@implementation GameScene {
+    SKNode *_playerLayerNode;
+    SKNode *_hudLayerNode;
+}
 
 -(instancetype)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Thirteen Pixel Fonts"];
-        myLabel.text = @"Hello, World!";
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-        myLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
-        myLabel.fontSize = 20.0;
-        [self addChild:myLabel];
+        [self setupSceneLayers];
+        
+        [self setupUI];
     }
     
     return self;
@@ -33,6 +33,28 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+}
+
+#pragma mark GAME METHODS
+
+-(void)setupSceneLayers {
+    _playerLayerNode = [SKNode node];
+    [self addChild:_playerLayerNode];
+    
+    _hudLayerNode = [SKNode node];
+    [self addChild:_hudLayerNode];
+}
+
+-(void)setupUI {
+    int barHeight = 45;
+    CGSize backgroundSize = CGSizeMake(self.size.width, barHeight);
+    
+    SKColor *backgroundColor = [SKColor colorWithRed:0 green:0 blue:0.05 alpha:1.0];
+    SKSpriteNode *hudBarBackground = [SKSpriteNode spriteNodeWithColor:backgroundColor size:backgroundSize];
+    
+    hudBarBackground.position = CGPointMake(0, self.size.height - barHeight);
+    hudBarBackground.anchorPoint = CGPointZero;
+    [_hudLayerNode addChild:hudBarBackground];
 }
 
 @end
